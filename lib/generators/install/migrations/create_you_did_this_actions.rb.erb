@@ -1,0 +1,15 @@
+class CreateYouDidThisActions < ActiveRecord::Migration[<%= ActiveRecord::Migration.current_version.to_s %>]
+  def self.up
+    create_table :you_did_this_actions do |t|
+      t.string :action
+      t.string :user
+
+      t.timestamps
+    end
+    add_index :you_did_this_actions, [:namespace]
+  end
+
+  def self.down
+    drop_table :you_did_this_actions
+  end
+end
